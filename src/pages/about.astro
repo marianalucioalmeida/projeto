@@ -1,28 +1,13 @@
 ---
-import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
-const pageTitle = "About Me just once";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "New About Me";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style>
-        h1 {
-          color: purple;
-          font-size: 4rem;
-        }
-    </style>
-  </head>
-  <body>
-    <Navigation />
-    
-    <h1>{pageTitle}</h1>
+  <BaseLayout pageTitle={pageTitle}>
     <h2>... and my new Astro site!</h2>
 
     <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
     <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-  </body>
-</html>
+
+    
