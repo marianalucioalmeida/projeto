@@ -2,19 +2,74 @@
 // const platform = "github";
 // const username = "withastro";
 
-import Social from './Social.astro';
+const currentYear = new Date().getFullYear();
 ---
 
-<style>
-    footer {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
 
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+	<div class="group">
+		<p>&copy; {currentYear} Mariana Almeida, all rights reserved.</p>
+	</div>
+	<p class="socials">
+    	<a href="https://www.instagram.com/marianalucioalmeida/">Instagram</a>
+		<a href="https://www.behance.net/mariana_lucioa">Behance</a>
+		<a href="https://github.com/marianalucioalmeida">GitHub</a>
+	</p>
 </footer>
+
+<style>
+	footer {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+		padding: 3rem 2rem 3rem;
+		text-align: center;
+		color: var(--grey-400);
+		font-size: var(--text-sm);
+	}
+
+	footer a {
+		color: var(--grey-400);
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+	}
+
+	footer a:hover,
+	footer a:focus {
+		text-decoration-color: currentColor;
+	}
+
+	.group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.socials {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	@media (min-width: 50em) {
+		footer {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2.5rem 5rem;
+		}
+
+		.group {
+			flex-direction: row;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.socials {
+			justify-content: flex-end;
+		}
+	}
+</style>
+
+
+
