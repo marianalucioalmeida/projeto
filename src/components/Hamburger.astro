@@ -1,44 +1,98 @@
 ---
 ---
-<div class="hamburger">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-  </div>
 
-  <style>
-    .hero {
-      font-size: var(--text-lg);
-      text-align: center;
+<div class="hamburger" onclick="toggleNav()">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+
+<style>
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+  
+  .line {
+    position: absolute;
+    width: 1.7rem;
+    height: 2px;
+    background-color: var(--grey-700);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .line:nth-child(1) {
+    top: 0;
+  }
+
+  .line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .line:nth-child(3) {
+    bottom: 0;
+  }
+
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(1px, 1px);
+  }
+
+  .hamburger.open .line:nth-child(2) {
+    transform: rotate(-45deg) translate(1px, -1px);
+  }
+
+  .hamburger.open .line:nth-child(3) {
+    opacity: 0;
+  }
+
+  .cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+
+  .cross .line {
+    width: 1.7rem;
+    height: 2px;
+    background-color: var(--grey-700);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .cross .line:nth-child(1) {
+    transform: rotate(45deg) translate(-2px, 2px);
+  }
+
+  .cross .line:nth-child(2) {
+    transform: rotate(-45deg) translate(-2px, -2px);
+  }
+
+  .hamburger.open > .cross {
+    display: block;
+  }
+
+  @media screen and (min-width: 636px) {
+    .hamburger {
+      display: none;
     }
-  
-    .title,
-    .tagline {
-      max-width: 37ch;
-      margin-inline: auto;
+  }
+</style>
+
+<script>
+  function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    if (navLinks && hamburger) {
+      navLinks.classList.toggle('expanded');
+      hamburger.classList.toggle('open');
     }
+  }
   
-    .title {
-      font-size: var(--text-3xl);
-      color: var(--gray-0);
-    }
-  
-    @media (min-width: 50em) {
-      .hero {
-        font-size: var(--text-xl);
-      }
-  
-      .start {
-        text-align: start;
-      }
-  
-      .start .title,
-      .start .tagline {
-        margin-inline: unset;
-      }
-  
-      .title {
-        font-size: var(--text-5xl);
-      }
-    }
-  </style>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.hamburger').addEventListener('click', toggleNav);
+  });
+</script>

@@ -2,10 +2,29 @@
 import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
 ---
-<header>
-  <nav>
+<div class="navbar">
     <Hamburger />
     <Navigation />
-  </nav>
-</header>
+</div>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+  }
+</style>
+
+<script>
+  function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    if (navLinks && hamburger) {
+      navLinks.classList.toggle('expanded');
+      hamburger.classList.toggle('open');
+    }
+  }
+  
+</script>
 
