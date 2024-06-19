@@ -15,16 +15,38 @@ const { pageTitle } = Astro.props;
   <body>
     <Header />
     <h1>{pageTitle}</h1>
-
     <div class="gradient-bg">
       <div class="gradients-container">
         <div class="g1"></div>
-
       </div>
     </div>
-
     <slot />
     <Footer />
   </body>
 </html>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const interBubble = document.querySelector<HTMLDivElement>('.interactive')!;
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
+
+    function move() {
+        curX += (tgX - curX) / 20;
+        curY += (tgY - curY) / 20;
+        interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+        requestAnimationFrame(() => {
+            move();
+        });
+    }
+
+    window.addEventListener('mousemove', (event) => {
+        tgX = event.clientX;
+        tgY = event.clientY;
+    });
+
+    move();
+});
+</script>
