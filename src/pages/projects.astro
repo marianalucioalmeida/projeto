@@ -16,27 +16,34 @@ const pageTitle = "Projects";
 </BaseLayout>
 
 <style>
-  img {
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    padding: 16px;
-    justify-content: center;
+  .container {
+   width: 100%;
   }
 
-  .container {
-    display: flex;
+  img {
     width: 100%;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    background: black;
+    object-fit: cover;
+    padding: 5px;
   }
 
   @media (min-width:768px) {
+    .container {
+    position: relative;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,300px));
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
     img {
-
-    }
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    justify-content: center;
+  }
   }
 
   @media (min-width:1024px) {
@@ -44,7 +51,9 @@ const pageTitle = "Projects";
   }
 
   @media (min-width:1280px) {
-    
+    .container {
+      column-gap: 4rem;
+    }
   }
 
 </style>
