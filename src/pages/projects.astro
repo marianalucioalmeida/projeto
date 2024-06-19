@@ -1,25 +1,56 @@
 ---
-import Header from '../components/Header.astro';
 import '../styles/global.css';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
-const pageTitle = "My Astro Learning Blog";
+const pageTitle = "Projects";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-</head>
-<body>
-    <Header />
-  
-    <h1>{pageTitle}</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-      </ul>
-      <Footer />
-    </body>
-  </html>
+<BaseLayout>
+  <h1>{pageTitle}</h1>
+  <div class="container">
+    <img src="/assets/img/apresentação.png" alt="">
+    <img src="/assets/img/Thumbnail.png" alt="">
+    <img src="/assets/img/589e1d71855625.5bd330e58ee68.jpg" alt="">
+    <img src="/assets/img/90a49771851891.5bd318087b939.jpg" alt="">
+  </div>
+</BaseLayout>
+
+<style>
+  img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    padding: 16px;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    background: black;
+  }
+
+  @media (min-width:768px) {
+    img {
+
+    }
+  }
+
+  @media (min-width:1024px) {
+    
+  }
+
+  @media (min-width:1280px) {
+    
+  }
+
+</style>
+
+
+
+  <ul>
+    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
