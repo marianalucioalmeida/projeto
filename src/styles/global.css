@@ -83,15 +83,17 @@ h5 {
 }
 
 h1 {
-	font-size: var(--text-5xl);
+	font-size: var(--text-3xl);
+  margin-top: 80px;
 }
 
 h2 {
-	font-size: var(--text-4xl);
+	font-size: var(--text-5xl);
 }
 
 h3 {
-	font-size: var(--text-3xl);
+	font-size: var(--text-xl);
+  margin-top: 32px;
 }
 
 h4 {
@@ -100,6 +102,14 @@ h4 {
 
 h5 {
 	font-size: var(--text-xl);
+}
+
+p {
+  font-size: var(--text-sm);
+}
+
+li {
+  font-size: var(--text-md);
 }
 
 

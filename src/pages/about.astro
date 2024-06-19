@@ -1,13 +1,41 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "About Me";
+const pageTitle = "about";
 ---
   <BaseLayout pageTitle={pageTitle}>
-    <h2>... and my new Meteor site!</h2>
+    <ul>
+      <li><h2>Olá, I'm mariana</h2></li>
+      <li><h2>Product Designer with a strong background in Visual Design. I believe in designing products that have a real impact on people's lives. If we can make a positive impact, why shouldn't we?</h2></li>
+    </ul>
+    <h3>Education</h3>
+    <ul>
+      <li>2023/2024 FBAUL, Lisbon, Digital Experience Design</li>
+      <li>2022 Design ux/ui.li</li>
+      <li>2016/2018 Esad, Caldas da Rainha, Design Gráfico.</li>
+      <li>2015/2016 BTK, Berlin, Design de Comunicação, Erasmus.</li>
+      <li>2014/2015 IADE Creative University, Lisboa, Design.</li>
+      <li>2011/2014 Escola Artística António Arroio, Lisboa, RPE.</li>
+    </ul>
+    <h3>Exhibitions</h3>
+    <ul>
+      <li>2018 Comunicar Design Visual Identity, 20ª ediçtion CCP Festival.</li> 
+      <li>"Como se ensina a pensar e a desenhar produtos digitais", 2018 Almanaque, Espaço Concas, Centro de Artes, Caldas da Rainha</li>
+    </ul>
+    <h3>Workshops</h3>
+    <ul>
+      <li>2018 Rita Matos</li>
+      <li>2018 Futur Neue</li>
+      <li>2018 Animal Sentimental (Risografia)</li>
+    </ul>
 
-    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
-    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-
-    
+      h2 {
+        margin-top: 0;
+      }
+    </style>
