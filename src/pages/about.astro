@@ -9,7 +9,7 @@ const pageTitle = "About";
     <h3>Education</h3>
     <ul>
       <li>2023/2024 FBAUL, Lisbon, Digital Experience Design</li>
-      <li>2022 Design ux/ui.li</li>
+      <li>2022 Design ux/ui</li>
       <li>2016/2018 Esad, Caldas da Rainha, Design Gráfico.</li>
       <li>2015/2016 BTK, Berlin, Design de Comunicação, Erasmus.</li>
       <li>2014/2015 IADE Creative University, Lisboa, Design.</li>
@@ -36,5 +36,23 @@ const pageTitle = "About";
       h2 {
         margin-top: 0;
         width: 80%;
+      }
+
+      @media (min-width:768px) {
+        h2 {
+        width: 70%;
+        }
+      }
+
+      @media (min-width:1024px) {
+          h2 {
+          width: 60%;
+        }
+      }
+
+      @media (min-width:1280px) {
+          h2 {
+          width: 50%;
+        }
       }
     </style>

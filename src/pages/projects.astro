@@ -8,10 +8,10 @@ const pageTitle = "Projects";
 <BaseLayout>
   <h1>{pageTitle}</h1>
   <div class="container">
-    <img src="/assets/img/apresentação.png" alt="">
-    <img src="/assets/img/Thumbnail.png" alt="">
-    <img src="/assets/img/589e1d71855625.5bd330e58ee68.jpg" alt="">
-    <img src="/assets/img/90a49771851891.5bd318087b939.jpg" alt="">
+    <a href="/posts/post-1/"><img src="/assets/img/Thumbnail.png" alt="cover page of a new instagram feature case study"></a>
+    <a href="/posts/post-2/"><img src="/assets/img/apresentação.png" alt="cover image of website redesign"></a>
+    <a href="/posts/post-3/"><img src="/assets/img/589e1d71855625.5bd330e58ee68.jpg" alt="two hands holding and magazine"></a>
+    <img src="/assets/img/90a49771851891.5bd318087b939.jpg" alt="two hands holding a book each">
   </div>
 </BaseLayout>
 
@@ -34,8 +34,8 @@ const pageTitle = "Projects";
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px,300px));
-    column-gap: 1rem;
-    row-gap: 1rem;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
   }
     img {
     width: 300px;
@@ -57,9 +57,3 @@ const pageTitle = "Projects";
   }
 
 </style>
-
-
-
-  <ul>
-    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-  </ul>

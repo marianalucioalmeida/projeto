@@ -2,10 +2,34 @@
 const { frontmatter } = Astro.props;
 import BaseLayout from './BaseLayout.astro';
 ---
-<BaseLayout pageTitle={frontmatter.title}></BaseLayout>
-<p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-<p><em>{frontmatter.description}</em></p>
-<p>Written by: {frontmatter.author}</p>
+<BaseLayout pageTitle={frontmatter.title}>
+<p>{frontmatter.description}</p>
 <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 <slot />
 </BaseLayout>
+
+<style>
+    p {
+        font-size: var(--text-base);
+        width: 80%;
+    }
+
+    @media (min-width:768px) {
+        p {
+        font-size: var(--text-lg);
+        width: 70%;
+    }
+    }
+
+    @media (min-width:1024px) {
+        p {
+        width: 60%;
+    }
+    }
+
+    @media (min-width:1280px) {
+        p {
+        width: 50%;
+    }
+}
+</style>
