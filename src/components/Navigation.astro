@@ -1,12 +1,10 @@
 ---
 ---
-
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/projects">Projets</a>
-  <a href="/about">About</a>
-  <a href="mailto:marianalucioalmeia@gmail.com">Contact</a>
-</div>
+  <div class="nav-links">
+    <a href="/projects">Projects</a>
+    <a href="/about">About</a>
+    <a href="mailto:marianalucioalmeia@gmail.com">Contact</a>
+  </div>
 
 <style>
   .nav-links {
@@ -19,6 +17,7 @@
   }
   
   .nav-links a {
+    z-index: 200;
     display: block;
     text-align: left;
     padding: 2px 0;
@@ -34,6 +33,7 @@
   }
   
   .expanded {
+    z-index: 220;
     display: block;
   }
 
@@ -45,11 +45,13 @@
     position: static;
     width: auto;
     background: none;
+    display: flex;
   }
 
   .nav-links a {
     display: inline-block;
     padding: 0 16px;
+    z-index: 180;
   }
   }
   </style>

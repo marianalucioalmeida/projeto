@@ -2,17 +2,60 @@
 import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
 ---
-<div class="navbar">
-    <Hamburger />
-    <Navigation />
+<div class="header">
+  <a href="/"><img class="logo" src="/assets/img/mariana..svg" alt="logo, mariana."></a>
+  <div class="navbar">
+      <Hamburger />
+      <Navigation />
+  </div>
 </div>
 
 <style>
+  a {
+    z-index: 190;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    justify-content: flex-start;
+    max-width: 50%;
+    margin-top: 3%;
+  }
+
   .navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
+    margin-top: 60px;
+  }
+
+  @media screen and (min-width: 636px) {
+    .navbar {
+      margin-top: 0;
+    }
+    
+  }
+
+  @media (min-width:768px) {
+    .logo {
+    max-width: 40%;
+    }
+  }
+
+  @media (min-width:1024px) {
+    .logo {
+    max-width: 30%;
+    }
+  }
+
+  @media (min-width:1280px) {
+    h2 {
+      font-size: var(--text-5xl);
+    }
   }
 </style>
 
